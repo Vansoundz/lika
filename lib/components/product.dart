@@ -34,64 +34,44 @@ class _ProductState extends State<Product> {
         borderRadius: BorderRadius.circular(8),
         child: Column(
           children: [
-            Stack(
-              children: [
-                Image.asset(
-                  'assets/img/${widget.product.image}',
-                  width: w / 2.2,
-                  height: w / 2.2,
-                ),
-                Positioned(
-                  top: 4,
-                  right: 4,
-                  child: IconButton(
-                    icon: widget.product.liked
-                        ? Icon(
-                            Icons.favorite,
-                            color: orange,
-                          )
-                        : Icon(
-                            Icons.favorite_border,
-                          ),
-                    onPressed: () =>
-                        Provider.of<CProduct>(context, listen: false)
-                            .likeUnlike(widget.product.id),
-                  ),
-                ),
-                Positioned(
-                  bottom: 4,
-                  right: 4,
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return SingleProduct(
-                              product: widget.product,
-                            );
-                          },
-                        ),
+            InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return SingleProduct(
+                        product: widget.product,
                       );
                     },
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(
-                          48,
-                        ),
-                        color: primary,
-                      ),
-                      child: Text(
-                        "View more",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                        ),
-                      ),
+                  ),
+                );
+              },
+              child: Stack(
+                children: [
+                  Image.asset(
+                    'assets/img/${widget.product.image}',
+                    width: w / 2.2,
+                    height: w / 2.2,
+                  ),
+                  Positioned(
+                    top: 4,
+                    right: 4,
+                    child: IconButton(
+                      icon: widget.product.liked
+                          ? Icon(
+                              Icons.favorite,
+                              color: orange,
+                            )
+                          : Icon(
+                              Icons.favorite_border,
+                            ),
+                      onPressed: () =>
+                          Provider.of<CProduct>(context, listen: false)
+                              .likeUnlike(widget.product.id),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Expanded(
               child: Padding(
