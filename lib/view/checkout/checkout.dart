@@ -13,7 +13,7 @@ class Checkout extends StatefulWidget {
 }
 
 class _CheckoutState extends State<Checkout> {
-  String name, phone, location, token;
+  late String name, phone, location, token;
   @override
   Widget build(BuildContext context) {
     double total = Provider.of<CProduct>(context).total;
@@ -163,7 +163,7 @@ class _CheckoutState extends State<Checkout> {
                 decoration: BoxDecoration(
                   border: Border.symmetric(
                     vertical: BorderSide(
-                      color: Colors.grey[700],
+                      color: Colors.black45,
                     ),
                   ),
                 ),

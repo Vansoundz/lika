@@ -14,7 +14,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  DateTime currentBackPressTime;
+  late DateTime currentBackPressTime;
   GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
 
   @override
@@ -90,19 +90,19 @@ class _HomeState extends State<Home> {
   }
 
   Future<bool> onWillPop() {
-    DateTime now = DateTime.now();
-    if (currentBackPressTime == null ||
-        now.difference(currentBackPressTime) > Duration(seconds: 2)) {
-      currentBackPressTime = now;
+    // DateTime now = DateTime.now();
+    // if (currentBackPressTime == null ||
+    //     now.difference(currentBackPressTime) > Duration(seconds: 2)) {
+    //   currentBackPressTime = now;
 
-      _key.currentState.showSnackBar(SnackBar(
-          content: Container(
-        width: _key.currentContext.size.width * 0.6,
-        margin: const EdgeInsets.all(8.0),
-        child: Text("Click again to exit"),
-      )));
-      return Future.value(false);
-    }
+    //   _key.currentState?.showSnackBar(SnackBar(
+    //       content: Container(
+    //     width: _key.currentContext.size.width * 0.6,
+    //     margin: const EdgeInsets.all(8.0),
+    //     child: Text("Click again to exit"),
+    //   )));
+    //   return Future.value(false);
+    // }
     return Future.value(true);
   }
 }

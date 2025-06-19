@@ -1,15 +1,15 @@
 import 'dart:async';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+// import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:lika/models/product_model.dart';
-import 'package:lika/utils/colors.dart';
+// import 'package:lika/utils/colors.dart';
 import 'package:lika/view/auth/auth.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  Crashlytics.instance.enableInDevMode = true;
+  // Crashlytics.instance.enableInDevMode = true;
   // Pass all uncaught errors from the framework to Crashlytics.
-  FlutterError.onError = Crashlytics.instance.recordFlutterError;
+  // FlutterError.onError = Crashlytics.instance.recordFlutterError;
   runZoned<Future<void>>(() async {
     runApp(
       MultiProvider(
@@ -21,7 +21,9 @@ void main() {
         child: App(),
       ),
     );
-  }, onError: Crashlytics.instance.recordError);
+  }, onError: (error, stack) {
+    // Crashlytics.instance.recordError(error, stack);
+  });
 }
 
 class App extends StatelessWidget {
@@ -32,7 +34,7 @@ class App extends StatelessWidget {
       title: 'Lika',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        backgroundColor: lgrey,
+        // backgroundColor: lgrey,
         platform: TargetPlatform.iOS,
         primarySwatch: Colors.brown,
         visualDensity: VisualDensity.adaptivePlatformDensity,

@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 
 class Product extends StatefulWidget {
   final MProduct product;
-  Product({this.product});
+  Product({required this.product});
   @override
   _ProductState createState() => _ProductState();
 }
@@ -23,7 +23,7 @@ class _ProductState extends State<Product> {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey[200],
+            color: Colors.black12,
             blurRadius: 6,
             offset: Offset(0, 0),
           ),
@@ -103,7 +103,7 @@ class _ProductState extends State<Product> {
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.grey[200],
+                                  color: Colors.black12,
                                   blurRadius: 6,
                                   offset: Offset(0, 0),
                                 )
@@ -123,14 +123,14 @@ class _ProductState extends State<Product> {
                       widget.product.quantity,
                       style: TextStyle(
                         fontSize: 12,
-                        color: Colors.grey[600],
+                        color: Colors.black45,
                       ),
                     ),
                     Text(
                       "Ksh ${widget.product.price}",
                       style: TextStyle(
                         fontSize: 12,
-                        color: Colors.grey[600],
+                        color: Colors.black45,
                       ),
                     )
                   ],

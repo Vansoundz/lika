@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 
 class SearchItem extends StatelessWidget {
   final MProduct product;
-  SearchItem({this.product});
+  SearchItem({required this.product});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,7 +20,7 @@ class SearchItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey[300],
+              color: Colors.black12,
               offset: Offset(0, 0),
               blurRadius: 6,
             ),

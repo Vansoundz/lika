@@ -100,7 +100,7 @@ class Cart extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(48),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.grey[300],
+                                    // color: Colors.black12,
                                     blurRadius: 6,
                                     offset: Offset(0, 0),
                                   ),
@@ -156,7 +156,7 @@ class Cart extends StatelessWidget {
                       decoration: BoxDecoration(
                         border: Border.symmetric(
                           vertical: BorderSide(
-                            color: Colors.grey[700],
+                            // color: Colors.grey[700],
                           ),
                         ),
                       ),

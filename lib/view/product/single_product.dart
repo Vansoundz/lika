@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 
 class SingleProduct extends StatelessWidget {
   final MProduct product;
-  SingleProduct({this.product});
+  SingleProduct({required this.product});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +84,7 @@ class SingleProduct extends StatelessWidget {
                         color: Colors.white,
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey[200],
+                            color: Colors.black12,
                             blurRadius: 6,
                             offset: Offset(0, 0),
                           ),
@@ -149,7 +149,7 @@ class SingleProduct extends StatelessWidget {
                                       color: primary,
                                       boxShadow: [
                                         BoxShadow(
-                                          color: Colors.grey[300],
+                                          color: Colors.black12,
                                           offset: Offset(0, 0),
                                           blurRadius: 6,
                                         ),

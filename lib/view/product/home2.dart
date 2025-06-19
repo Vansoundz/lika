@@ -15,7 +15,7 @@ class Home2 extends StatefulWidget {
 }
 
 class _Home2State extends State<Home2> {
-  DateTime currentBackPressTime;
+  late DateTime currentBackPressTime;
   GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -154,19 +154,18 @@ class _Home2State extends State<Home2> {
 
   Future<bool> onWillPop() {
     DateTime now = DateTime.now();
-    if (currentBackPressTime == null ||
-        now.difference(currentBackPressTime) > Duration(seconds: 2)) {
+    if (now.difference(currentBackPressTime) > Duration(seconds: 2)) {
       currentBackPressTime = now;
 
-      _key.currentState.showSnackBar(
-        SnackBar(
-          content: Container(
-            width: _key.currentContext.size.width * 0.6,
-            margin: const EdgeInsets.all(8.0),
-            child: Text("Click again to exit"),
-          ),
-        ),
-      );
+      // _key.currentState.showSnackBar(
+      //   SnackBar(
+      //     content: Container(
+      //       width: _key.currentContext.size.width * 0.6,
+      //       margin: const EdgeInsets.all(8.0),
+      //       child: Text("Click again to exit"),
+      //     ),
+      //   ),
+      // );
       return Future.value(false);
     }
     return Future.value(true);

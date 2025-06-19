@@ -11,11 +11,11 @@ class MProduct {
   int pieces = 0;
 
   MProduct(
-      {this.title,
-      this.id,
-      this.quantity,
-      this.price,
-      this.image,
+      {required this.id,
+      required this.title,
+      required this.quantity,
+      required this.price,
+      required this.image,
       this.description = ""});
 
   void likeUnlike() {

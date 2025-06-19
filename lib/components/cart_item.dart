@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 
 class CartItem extends StatelessWidget {
   final MProduct product;
-  CartItem({this.product});
+  CartItem({required this.product});
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<CProduct>(context, listen: false);
@@ -17,7 +17,7 @@ class CartItem extends StatelessWidget {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: Colors.grey[400],
+              color: Colors.black12,
               offset: Offset(0, 0),
               blurRadius: 6,
             ),
@@ -46,7 +46,7 @@ class CartItem extends StatelessWidget {
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey[300],
+                        color: Colors.black12,
                         offset: Offset(0, 0),
                         blurRadius: 4,
                       ),
